@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      /* 清除无序列表小黑点 */
+      list-style: none;
+    }
+
+    #banner {
+      width: 800px;
+      height: 533px;
+      border: 1px solid skyblue;
+      /*可以设置一个定位给子类，不然参照物就是body*/
+      position: relative;
+      /*居中对齐*/
+      margin: 0 auto;
+      /* 溢出隐藏-后面要接float不然下面都没了 */
+      overflow: hidden;
+      /*!* banner  无缝   *!*/
+     }
+    .img ul{
+       width: 1000%;
+     }
+    .img ul li{
+      width: 800px;
+      height: 533px;
+      position: absolute;
+      display: none;
+      /* 6张图片 全部叠在一起    淡入淡出 */
+      /*参照物为id="banner"的定位*/
+      /*position: absolute;*/
+     }
+    .tab {
+      width: 152px;
+      position: absolute;
+      border-radius: 5px;
+      bottom: 0;
+      left: 50%;
+      margin-left: -76px;
+    }
+    .tab ul li {
+      width: 15px;
+      height: 15px;
+      /*小条的背景*/
+      background: #a2bfa2;
+      /*竖条变横条*/
+      float: left;
+      margin: 4px 5px;
+      /*  css 圆角属性 */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .tab ul li.active {
+      background: #334248;
+    }
+    .btn div {
+      width: 30px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.55);
+      /*箭头大小*/
+      font-size: 25px;
+      /*箭头所在行，就是高度变化*/
+      line-height: 60px;
+      /*箭头对齐位置*/
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      /*在banner的位置*/
+      top: 50%;
+      margin-top: -30px;
+      cursor: pointer;
+     }
+    .btn div:hover {
+      background: rgba(0, 0, 0, 0.77);
+    }
+    #left {
+      left: 0;
+    }
+    #right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="banner">
+  <!-- banner(封面滚动图)开始 -->
+  <div class="img">
+    <!-- 图片 -->
+    <ul>
+      <li style="display: block">
+        <img src="https://visualhunt.com/photos/8/camera-journal-travel.jpg?s=l" alt="">
+      </li>
+      <li>
+        <img src="https://visualhunt.com/photos/1/male-tourist-looking-at-mountains.jpg?s=l" alt="">
+      </li>
+      <li>
+        <img src="https://visualhunt.com/photos/7/natural-forest-snow-mountainous.jpg?s=l" alt="">
+      </li>
+      <li>
+        <img src="https://visualhunt.com/photos/1/vintage-typewriter-notebook-and-eyeglasses-on-wooden-table.jpg?s=l" alt="">
+      </li>
+      <li>
+        <img src="https://visualhunt.com/photos/7/wood-lying-pathways-autumn-forest.jpg?s=l" alt="">
+      </li>
+      <li>
+        <img src="https://visualhunt.com/photos/8/girl-woman-happiness.jpg?s=l" alt="">
+      </li>
+    </ul>
+  </div>
+  <!-- 小点点 -->
+  <div class="tab">
+    <ul>
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <!-- 左右按钮 -->
+  <div class="btn">
+    <div id="left">&lt;</div>
+    <div id="right">&gt;</div>
+  </div>
+  <!-- banner结束 -->
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+  var $banner = $('#banner');
+  var $tabLi = $('#banner .tab ul li');
+  var $imgLi = $('#banner .img ul li ');
+  var $btn = $('#banner .btn  div');
+  var $index = 0;
+
+  // 1.小圆点悬停变换
+  $tabLi.hover(function () {
+    // 索引值
+    $index = $(this).index();
+    // 小圆点变换
+    $(this).addClass('active').siblings().removeClass('active');
+    // 图片变化
+    $imgLi.eq($index).stop(true).fadeIn().siblings().stop(true).fadeOut();
+  });
+
+  // 2.点击左右按钮
+  $btn.click(function () {
+    var $i = $(this).index;
+    console.log('btn',$i);
+    // 1 == > true  0 ==> false
+    if($i) {
+      $index ++;
+      // 当前索引值 %= 整个长度 1 %= 4 取余进行循环
+      $index %= $tabLi.length;
+  }else {
+      // if($index<0) $index=$tabLi.length-1;
+     $index<0 ? $index=$tabLi.length-1 : $index --;
+    }
+  $tabLi.eq($index).addClass('active').siblings().removeClass('active');
+  // 图片 淡入淡出
+  $imgLi.eq($index).stop(true).fadeIn().siblings().stop(true).fadeOut();
+  }).mousedown(function () {return false});
+  // 加了mousedown双击不会选取text内容了，里面的图标< >
+
+  // 3.把定时器封装成一个函数
+  var timer;
+  function auto() {
+    timer = setInterval(function () {
+      $index ++;
+      $index %= $tabLi.length;
+        $tabLi.eq($index).addClass('active').siblings().removeClass('active');
+        // 图片 淡入淡出
+        $imgLi.eq($index).stop(true).fadeIn().siblings().stop(true).fadeOut();
+      }, 1500);
+  }
+  // 默认调用定时器
+  auto();
+
+  // 4.清除定时器
+  $banner.hover(function () {
+    // 划入的时候  清除定时器
+    clearInterval(timer);
+  }, function () {
+    // 调用定时器
+    auto()
+  });
+</script>
+</body>
+</html>
+
