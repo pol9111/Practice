@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+{#' | '代表Python里面的'.':'代表Python里面的'()'#}
+{#冒号后面变量不加引号，其他要加#}
+
+{{ test }}<br>
+这是设置了默认值的变量：{{ xx|default:'xxxxxx' }}<br>
+这是设置了只有为None时才使用默认值的变量：{{ ss|default_if_none:'xxxxxx' }}<br>
+这是没做处理的变量：{{ test }}<br>
+这是设置了默认值的变量：{{ xx|default:'xxxxxx' }}<br>
+这是设置了只有为None时才使用默认值的变量：{{ xx|default_if_none:'xxxxxx' }}<br>
+这是变为小写后的变量：{{ test|lower }}<br>
+这是先变成小写再将首字母大写后的变量：{{ test|lower|capfirst}}<br>
+这是两个数字变量相加：{{ num1|add:num2 }}<br>
+这是两个字符串变量相加：{{ test|add:xx }}<br>
+这是列表变量的第一个元素：{{ list|first }}<br>
+这是列表变量的最后一个元素：{{ list|last }}<br>
+这是默认的data日期时间格式：{{ now|date }}<br>
+这是默认的time时间格式：{{ now|time }}<br>
+这是data过滤器的年月日24小时制时间格式：{{ now|date:'Y/m/d/H:i:s ' }}<br>
+这是time过滤器的年月日12小时制时间格式：{{ now|time:'h:i:s ' }}<br>
+这是字符串的join方法：{{ ls|join:'xxx' }}<br>
+这是字符串的长度方法：{{ test|length }}<br>
+这是列表的长度是否长度为4：{{ list|length_is:4 }}<br>
+---这是字符串只显示4个字符，其余省略(占3位)：{{ test|truncatechars:7 }}<br>
+---这是字符串只显示2个单词，其余省略(不占位)：{{ test|truncatewords:2 }}<br>
+这是字符串切片：{{ test|slice:'1:4' }}<br>
+这是列表切片：{{ list|slice:':2' }}<br>
+这是含html标签的字符串：{{ html }}<br>
+这是去掉字符串中的html标签：{{ html|striptags }}<br>
+这是关掉自动转义，使字符串中html标签生效：{{ html|safe }}<br>
+这是没做处理的小数：{{ float }}<br>
+这是保留了一位小数：{{ float|floatformat }}<br>
+这是保留了两位位小数：{{ float|floatformat:'2' }}<br>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -20,7 +20,7 @@ from book import views
 
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
-    url(r'book/', include('book.urls'), {'switch':'true'}, {'login':'true'}),
+    url(r'book/', include('book.urls')),
     # url(r'^hello/$', views.index),
     # url(r'^hello_python/$', views.hello_python),
     # url(r'^hello_php/$', views.hello_php),
