@@ -24,9 +24,9 @@ urlpatterns = [
     # url(r'index/$', views.article1, name='book_article1'),
     # url(r'^article_new/$', views.article_new, name='book_article_new'),
     # url(r'outer_html/$', views.outer_html),
-    url(r't1/$', views.t1),
-    url(r't2/$', views.t2),
-    url(r't3/$', views.t3),
+    url(r'^t1/$', views.t1),
+    url(r'^t2/$', views.t2),
+    url(r'^t3/$', views.t3),
 ]
 
 

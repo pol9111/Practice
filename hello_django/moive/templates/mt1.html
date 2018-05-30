@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+
+  </style>
+</head>
+<body>
+这是moive的t1 <br>
+
+{% if name1 == "python" %}
+   这是python页面噢噢噢噢
+{% elif name1 == "django" %}
+   这是django的页面哈哈哈哈
+{% else %}
+   哈哈哈 是{{ name1 }}的呢....
+{% endif %}
+
+
+# for的使用
+{% for foo in list %}
+  {% if forloop.counter1 == 1 %}
+{#    循环到Counter那个值为止#}
+    <li>这是一个值：{{ foo }}</li>
+  {% else %}
+    <li>{{ foo }}</li>
+  {% endif %}
+{% endfor %}
+
+# url 页面转换
+<a href='test'>test</a><br>
+<a href={% url 'test' %}>test</a> test 页面<br>
+<a href="{% url 'mnew' 'django' %}">new传参数</a><br>
+
+# with的使用
+{#变量重命名#}
+{% with ts1 as ts2 %}
+  1111{{ ts2 }}<br>
+  2222{{ ts2 }}<br>
+{% endwith %}
+
+# autoescape的使用<br>
+原始的:{{ html }}<br>
+过滤器方式:{{ html | safe }}<br>
+标签方式:
+{% autoescape off %}
+  {{ html }}<br>
+{% endautoescape %}
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

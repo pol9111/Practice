@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="name" content="Trleo">
-  <title>Welcome</title>
+  <title>{% block title %}这是默认标题{% endblock %}</title>
   <style>
 
   </style>
 </head>
 <body>
-book-t1
-
+{% block content %}
+  是默认内容
+{% endblock %}
+<br>
+{% block demo %}
+这是默认演示
+{% endblock %}
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script>
 

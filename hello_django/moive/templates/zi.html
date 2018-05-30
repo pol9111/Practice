@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}zi主页{% endblock %}
+
+<br><br><br><br><br><br>
+{#这些不会显示#}
+
+修改了就换了，但是你可以通过super继承
+{% block content %}
+  <br><br><br><br><br><br><br><br>
+  这句是通过block.super继承父类的：{{ block.super }}<br>
+  这是子模板自己的内容：没有写block就不会显示
+{% endblock %}
+
+<br><br><br><br><br><br><br><br>
+
+{% block demo %}
+  <br><br><br><br><br><br><br><br>
+   这是通过include引用的其他模板的内容：{% include 'mt1.html' %}
+{% endblock %}
+
+
+
+
+
+
