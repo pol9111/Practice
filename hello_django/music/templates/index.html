@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>静态文件加载</title>
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+
+图片：
+<img src="{% static 'img/music_img_1.jpg' %}" alt="">
+<script src="{% static 'js/myjs.js' %}"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

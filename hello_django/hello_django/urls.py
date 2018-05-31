@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from book import views
+
 
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
     url(r'^book/', include('book.urls')),
     url(r'^moive/', include('moive.urls')),
+    url(r'music/', include('music.urls')),
     # url(r'^hello/$', views.index),
     # url(r'^hello_python/$', views.hello_python),
     # url(r'^hello_php/$', views.hello_php),
