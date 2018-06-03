@@ -12,7 +12,7 @@ def current_time(format_string):
 
 # 简单标签，方法二
 @register.simple_tag(takes_context=True)
-def current_time2(context): # 注意这里要不context传入
+def current_time2(context): # 注意这里要context传入
     tm = context['format_string']
     return datetime.datetime.now().strftime(tm)
 

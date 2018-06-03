@@ -11,16 +11,20 @@
   </style>
 </head>
 <body>
+
 自定义过滤器<br><br>
 {{ str1 | mycut:" "}}<br>
 {{ str1 | mylower }}<br>
 {{ int1 | mylower1 }}<br>
 -----------------------------<br>
+
 自定义标签<br><br>
 {% current_time '%Y-%m-%d %H:%M:%P' %}<br>
 {% current_time2 %}<br><br>
+
 包含标签<br>
 {% show_results %}
+
 分配标签<br>
 {% current_time_1 '%Y-%m-%d %H:%M:%P' as ctime %}
 <br>

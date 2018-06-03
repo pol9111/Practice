@@ -39,17 +39,17 @@ from django.urls import reverse
 #
 #
 #
-# def article(request, **kwargs):
-#     return HttpResponse('这是文章首页')
-#
-#
-# def article1(request, **kwargs):
-#     if kwargs.get('switch') == 'true':
-#         return redirect(reverse('book_article_new'))
-#     return HttpResponse('这是文章首页')
-#
-# def article_new(request,**kwargs):
-#     return HttpResponse('这是新的文章首页')
+def article(request, **kwargs):
+    return HttpResponse('这是文章首页')
+
+
+def article1(request, **kwargs):
+    if kwargs.get('switch') == 'true':
+        return redirect(reverse('book_article_new'))
+    return HttpResponse('这是文章首页')
+
+def article_new(request,**kwargs):
+    return HttpResponse('这是新的文章首页')
 
 
 def outer_html(request, **kwargs):

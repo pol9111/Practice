@@ -20,10 +20,10 @@ from book import views
 
 urlpatterns = [
     # url(r'^$', views.index1),
-    # url(r'article/$', views.article),
-    # url(r'index/$', views.article1, name='book_article1'),
-    # url(r'^article_new/$', views.article_new, name='book_article_new'),
-    # url(r'outer_html/$', views.outer_html),
+    url(r'article/$', views.article),
+    url(r'index/$', views.article1, name='book_article1'),
+    url(r'^article_new/$', views.article_new, name='book_article_new'),
+    url(r'outer_html/$', views.outer_html),
     url(r'^t1/$', views.t1),
     url(r'^t2/$', views.t2),
     url(r'^t3/$', views.t3),
