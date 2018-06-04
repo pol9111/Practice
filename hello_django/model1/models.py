@@ -32,7 +32,7 @@ class Course(models.Model):
 class Student(models.Model):
     s_id = models.AutoField(primary_key=True)
     s_name = models.CharField(max_length=30)
-    department = models.ForeignKey('Department')
+    department = models.ForeignKey('Department', related_name='student')
     course = models.ManyToManyField('Course')
 
     def __str__(self):

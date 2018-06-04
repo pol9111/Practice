@@ -113,14 +113,63 @@ def add_info(request):
 
 
 def search_info(request):
-    rs = Student.objects.all()[0]
+    # rs = Student.objects.all()[0]
     # 一对多的查询
-    print(rs.department)
+    # print(rs.department)
     # 多对多的正向查询
-    print(rs.course.all())
-    cs = Course.objects.first()
+    # print(rs.course.all())
+    # cs = Course.objects.first()
     # 多对多反向查询
-    print(cs.student_set.all())
+    # print(cs.student_set.all())
+
+    # 前向查询
+    # s1 = Student.objects.get(s_id=1)
+    # print(s1)
+    # print(s1.department)
+
+    # 直接赋值修改需要save
+    # dx = Department.objects.get(d_id=4)
+    # s1.department = dx
+    # s1.save()
+    # 反向查询
+    # d1 = Department.objects.get(d_id=1)
+    # d1.student_set.all()
+
+    # add 添加
+    # d1 = Department.objects.get(d_id=1)
+    # s1 = Student.objects.get(s_id=4)
+    # d1.student.add(s1) # 设置了别名 不然需要student_set
+    # print(s1.department)
+
+    # c1 = Course.objects.get(c_id=3)
+    # s1.course.add(c1)
+    # print(s1.course)
+
+    # create(**kwargs) 创建并添加
+    # s5 = Student.objects.get(s_id=3)
+    # s5.course.create(c_name='php')
+    # print(s5.course.all())
+
+    # remove
+    # cs = s5.course.all()[0]
+    # s5.course.remove(cs)
+
+    # clear
+    # s5.course.clear()
+
+    # 直接赋值 中间表赋值不用save
+    c_all = Course.objects.all()
+    s5 = Student.objects.get(s_id=3)
+    s5.course = c_all
+    s5.course.all()
+
+    # 多表查询
+    # 查询学院名字为‘BD’的学生的信息
+    Student.objects.filter(department__d_name='BD')
+    # 查询学生名字中包含‘xiao’的学生的学院信息
+    Department.objects.filter(student__s_name='xiao')
+    # 查询报了'python'课程的的学生的所属学院的信息
+    Department.objects.filter(student__course__c_name='python')
     return HttpResponse('succeed')
 
 

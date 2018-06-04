@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'book.apps.BookConfig',
     'moive',
     'music',
-    'model1'
+    'model1',
+    'blog',
 
 ]
 
