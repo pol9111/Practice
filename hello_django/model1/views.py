@@ -5,7 +5,7 @@ from django.shortcuts import render
 from model1.models import User, Department, Course, Student
 
 
-# 使用类对象如get，而不用内置的函数都要加上save()
+# 使用类对象，类的实例化做修改或添加，如get查找赋值(get出s1 = d1)，而不用内置的函数都要加上save()
 # 增加数据
 def add_user(request):
     # # 方法一： 简单方法
