@@ -13,16 +13,18 @@
             </tr>
         </thead>
     <tbody>
-        <tr>
-            <th><a href="">文章1</a></th>
-            <th><a href="">编辑</a> | <a href="">删除 </a></th>
-        </tr>
-        <tr>
-            <th><a href="">文章2</a></th>
-            <th><a href="">编辑</a> | <a href="">删除 </a></th>
-        </tr>
+        {% for i in blog_list %}
+             <tr>     {# 哪个url   name='blog_detail'  ?P<>需要穿关键字 不加blog_id也行#}
+                <th><a href="{% url 'blog_detail' blog_id=i.id %}">{{ i.title }}</a></th>
+                <th><a href="{% url 'blog_edit' blog_id=i.id %}">编辑</a> | <a href="{% url 'blog_delete' i.id %}">删除 </a></th>
+             </tr>
+        {% endfor %}
+
+
+
     </tbody>
     </table>
 
 
 {% endblock %}
+

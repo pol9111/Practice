@@ -8,6 +8,8 @@ class BlogModel(models.Model):
     content = models.TextField()
 
 
-
+class User(models.Model):
+    username = models.CharField(max_length=20, blank=False)
+    password = models.CharField(max_length=16, blank=False)
 
 
