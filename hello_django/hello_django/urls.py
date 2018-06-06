@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^music/', include('music.urls')),
     url(r'^model1/', include('model1.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^forms/', include('forms.urls')),
     # url(r'^hello/$', views.index),
     # url(r'^hello_python/$', views.hello_python),
     # url(r'^hello_php/$', views.hello_php),

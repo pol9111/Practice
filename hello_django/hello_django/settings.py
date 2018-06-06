@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'music',
     'model1',
     'blog',
+    'forms'
 
 ]
 
