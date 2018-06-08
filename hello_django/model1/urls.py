@@ -4,6 +4,7 @@ from django.contrib import admin
 from model1 import views
 
 urlpatterns = [
+    url(r'^admin/$', admin.site.urls),
     url(r'^add_user/$', views.add_user),
     url(r'^search_user/$', views.search_user),
     url(r'^update_user/$', views.update_user),

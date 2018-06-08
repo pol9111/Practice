@@ -6,11 +6,14 @@ from django.shortcuts import render, redirect, reverse
 
 
 def index(request):
+    int('xxx')
     return HttpResponse('hello')
 
 
 def home(request):
-    username = request.session.get('username', '未登入') # 到session表get，默认值'未登入'
+    print(request.myuser)
+    username = request.myuser
+    # username = request.session.get('username', '未登入') # 到session表get，默认值'未登入'
     return render(request, 'home.html',
                   {'username': username})
 

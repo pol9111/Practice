@@ -10,6 +10,7 @@
 </head>
 <body>
 你好！{{ username }}<br>
+你好！{{ myuser }}<br>  {#全局的一个模板变量#}
 <a href="{% url 'forms_login' %}">登入</a>
 <a href="{% url 'forms_logout' %}">登出</a>
 <a href="{% url 'forms_register' %}">注册</a>
