@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+    ul li{
+       /* 清除默认的小黑原点 */
+      list-style: none;
+      float: left;
+      margin-left: 20px;
+    }
+    .clear::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box1 {
+      background: skyblue;
+      float: left;
+    }
+    .box2 {
+      background: blue;
+      float: right;
+    }
+    .w100 {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+<!-- 文档流  脱离文档流 飘起来-->
+<!-- 只能left  right  -->
+<!-- 浮动带来问题  高度塌陷 -->
+<!-- 清除浮动  每次浮动以后都要第一时刻清除浮动 -->
+<!-- 行内元素浮动后 可以给宽高 相当于行内块-->
+<!--浮动可以把竖的列表弄成横的列表-->
+<ul class="clear">
+  <li>123</li>
+  <li>234</li>
+  <li>345</li>
+  <li>456</li>
+</ul>
+<div class="w100 box1 clear">111</div>
+<div class="w100 box2 clear">qwe</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .changeBtn {
+      /*让a标签变成行内块*/
+      display: block;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      /*去掉下划线*/
+      text-decoration: none;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.55);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:void(0)" class="changeBtn">点击</a>
+<div class="imgBox">
+  <img src="https://res.shiguangkey.com//file/201804/18/20180418194336983231925.png" alt="">
+</div>
+<script>
+  var changeBtnDom = document.querySelector('.changeBtn');
+  var imgDom = document.querySelector('.imgBox img');
+  /* 标识位 */
+  var flag = true;
+  changeBtnDom.onclick = function () {
+    if (flag) {
+      imgDom.src = 'https://res.shiguangkey.com//file/201804/13/20180413154427225047910.png';
+      flag = false
+      console.log(flag)
+    }
+    else {
+      imgDom.src = "https://res.shiguangkey.com//file/201804/18/20180418194336983231925.png";
+      flag = true
+      console.log(flag)
+    }
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

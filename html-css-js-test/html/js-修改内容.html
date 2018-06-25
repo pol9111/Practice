@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+</head>
+<body>
+<p id="self">我就是我</p>
+<p id="self1"><strong class="text">我还是我</strong></p>
+<script>
+  var selfDom = document.getElementById('self');
+  selfDom.innerHTML = 'wojiushiwo';
+    /*
+  * js 定义变量
+  *   var 变量名=10; // 正常
+  *   变量名 = 10; // 不推荐 强烈
+  * */
+/*  var a = 10;
+  alert(a);*/
+
+  document.getElementById('self1').innerHTML = '<strong class="text">我还是我</strong>';
+  document.getElementById('self1').innerText = '<strong class="text">我还是我</strong>';
+   /*
+    *   innerHTML
+    *     解析标签 也能解析没有标签的内容
+    *   innerText
+    *      不能解析标签
+    * */
+// document.getElementById('self').innerHTML ='HTML';
+/*document.getElementById('self').innerText ='<strong class="txt">Text</strong>';*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

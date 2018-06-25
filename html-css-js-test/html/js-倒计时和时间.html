@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 600px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .sec {
+      font-size: 30px;
+      color: red;
+      vertical-align: -5px;
+    }
+    span.date, span.time {
+      font-size: 20px;
+    }
+    .date {
+      color: skyblue;
+    }
+    .time {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <p class="content">敌军还有<span class="sec">30</span>秒抵达战场</p>
+  现在是北京时间：<span class="datetime"></span>
+</div>
+
+<script>
+  var secDom = document.querySelector('.sec');
+  var contentDom = document.querySelector('.content');
+  var dateTime = document.querySelector('.datetime');
+
+  // 倒数计时
+  // setInterval(func, 1000) 间隔一秒 1000毫秒
+  setInterval(function(){
+    secDom.innerHTML>0 ? secDom.innerHTML --: contentDom.innerHTML = '<p class="content">全军出击</p>';
+    // 也可以这样写
+    // secDom.innerHTML --;
+         // if(secDom.innerHTML<=0){
+         //     contentDom.innerHTML = '<p class="content">全军出击</p>';
+         // }
+  },1000);
+
+  function getDate() {
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth()+1;
+    var day = d.getDay();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    dateTime.innerHTML = ('<span class="date">'+year+'/'+month+'/'+day+'</span>&nbsp;<span class="time">'+h+'/'+m+'/'+s+'</span>')
+  }
+  getDate();
+  // setInterval(func, 1000) 间隔一秒 1000毫秒1
+  setInterval(getDate, 1000);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

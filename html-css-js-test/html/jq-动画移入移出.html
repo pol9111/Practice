@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background: skyblue;
+      /*display: none;*/
+      /* 连文字也透明 */
+      /*opacity: 0.66;*/
+    }
+    .wrap {
+      width: 50px;
+      height: 50px;
+      background: green;
+      position: relative;
+    }
+    #test {
+      height: 4000px;
+    }
+  </style>
+</head>
+<body id="test">
+  <div class="box" id="wrap">box</div>
+  <div class="wrap">wrap</div>
+
+  <!-- 引用 jq  -->
+  <!--<script src="index.js"></script>-->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script>
+    // 向上向下取反(做此时状态相反的事情)的移动
+    // $('.box').slideUp(1000);
+    // $('.box').slideDown(1000);
+    // $('.box').slideDown(4000, function() {
+    //    alert(1);
+    // });
+    // $('.box').slideToggle(1000);
+
+
+    // $('.box').fadeOut(1000);
+    // $('.box').fadeIn(2000).delay(1000).fadeOut(1000);
+    // $('.box').fadeOut(1000);
+    // $('.box').fadeToggle(1000);
+    // 上面淡出 toggle就变成淡入
+    // $('.box').fadeTo(1000, 0.55);
+
+
+     // stop(true, true) 清除队列  动画立即完成
+    $('.box').hover(function () {
+        $('.wrap').animate({
+            "top":400
+        },1000);
+    }, function () {
+        $('.wrap').animate({
+           "top":0
+        }, 1000)
+    });
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

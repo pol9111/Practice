@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_660160_foc7t3ucntz3q5mi.css">
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 2000px;
+    }
+    .t_top {
+      text-decoration: none;
+      /*icon-15颜色*/
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      background: brown;
+      position: fixed;
+      right: 60px;
+      bottom: 30px;
+      /*一开始不显示*/
+      display: none;
+      text-align: center;
+      line-height: 40px;
+    }
+    /*icon-15外部的css*/
+    .icon-15, .icon-top {
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:void(0)" class="t_top">
+  <i class="iconfont icon-top"></i>
+</a>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+  var $toTop = $('.t_top');
+  // 点击返回顶部
+  $toTop.click(function () {
+     $('html,body').animate({
+         'scrollTop':0
+     }, 500)
+  });
+  // 控制图标什么时候出来
+  $(window).scroll(function () {
+      // console.log(1);
+    // if($(window).scrollTop() > 200 ){
+    //   $toTop.fadeIn(300);
+    // }else {
+    //    $toTop.fadeOut(300);
+    // }
+    //   ? 代表if :代表else
+     $(window).scrollTop() > 200 ? $toTop.fadeIn(300) : $toTop.fadeOut(300);
+  });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

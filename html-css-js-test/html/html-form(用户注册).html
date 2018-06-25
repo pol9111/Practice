@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Trleo">
+    <title>form表单</title>
+    <style>
+        form{
+            color: darkgreen;
+        }
+        input {
+            color: brown;
+        }
+    </style>
+    <!-- 注释 -->
+<!--<from></from>-->
+<!-- 提交时候的地址 action 不写 默认当前页面  tab shift + tab -->
+<!-- name 后台接收数据的唯一值 -->
+<!-- get 把数据拼接到url后面 -->
+<!-- file:///F:/Project/Python/20_Web/lesson2/code/02%20form.html? -->
+<!-- get/post  一个可见  一个不可见  -->
+<!-- form 表单里面的name值 用法的都是一样的 -->
+</head>
+<body>
+    <form action="" method="get">
+        <p>
+            用户名:<input type="text" placeholder="请输入用户名" name="username">
+        </p>
+        <p>
+            密&emsp;码:<input type="password" placeholder="请输入密码" name="password">
+        </p>
+        <!-- 会造成互斥 如果记不住 就别记了  -->
+        <p>
+            性别:
+            男<input type="radio" name="gender" value="male">
+            女<input type="radio" name="gender" value="female">
+            保密<input type="radio" name="gender" value="sercet">
+        </p>
+        <p>
+            爱好:<input type="checkbox" name="hobby" value="coding" disabled>coding
+                <input type="checkbox" name="hobby" value="sleeping">sleeping
+                <input type="checkbox" name="hobby" value="reading" checked>reading
+        <!-- checked默认选上  -->
+        </p>
+        <p>
+            传文件<input type="file" name="file">
+        </p>
+        <p>
+            <!-- 提交一些不展示给用户看的内容  csrf的密钥 -->
+            <input type="hidden" value="123" name="hidden">
+        </p>
+        <p>
+            地址:
+            <select name="address" id="">
+                <option value="0">北京</option>
+                <option value="1">深圳</option>
+                <option value="2">厦门</option>
+            </select>
+        </p>
+        <p>
+            个人简介:
+            <textarea name="self" style="vertical-align: top;" id="self" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="我要登入">
+            <input type="reset" value="我要重置">
+        </p>
+    </form>
+
+<!--
+  表单能干啥？  搜集用户数据 提交到后台
+
+  action ==> 提交地址  默认使用当前页面
+  method ==> get(可见 不安全)/post （不可见  安全）  获取用get 提交 post
+  entype ==> 编码格式   唯一区别 在使用文件的时候   multipart/form-data
+
+   input 的 type 属性  text password radio checkbox submit
+            name  value
+             name = value 发送给后台   后台通过name得到value
+
+
+    id 只是一个属性
+    提高用户体验度！！！！
+
+    状态 ！！
+    checked　表示 选中 checkbox
+    selected　表示 选中 checkbox
+
+-->
+
+</body>
+</html>

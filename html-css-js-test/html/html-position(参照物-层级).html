@@ -1,0 +1,82 @@
+<!DOCTYPE html>  <!-- 声明这个是一个html5的网页 -->
+<html lang="en"> <!-- lang 语言 -->
+<head>
+  <meta charset="UTF-8"> <!-- 编码  -->
+  <meta name="author" content="Which"> <!-- 作者 -->
+  <title>01 position</title>   <!-- 标题  -->
+  <link rel="stylesheet" href="../../lesson4/code/index.css">
+  <style>
+    /* 清除浏览器自带的 内外边距 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 1000px;
+    }
+    .contain {
+      width: 100px;
+      border: 1px solid skyblue;
+      /* 上下  左右 ：auto */
+      margin: 0 auto;
+      position: relative;
+    }
+    .box {
+      background: #000;
+      /*
+      定位的属性
+           是相对什么参照物来定位 !!!
+       相对(relative)
+        永远以自己为参照物
+       绝对(absolute)
+        1. 没有定位父级的情况下 以body为参照物
+        2. 有定位父级  就以定位父级为参照物
+       固定(fixed)
+         永远以body为参照物
+      */
+      /*margin-top: 20px;*/
+      /* 相对定位  top left bottom right */
+      /* margin-top  margin-left */
+      /* 相对定位 没有脱离文档流 */
+     /*  position: relative;
+       top: 10px; !* 距离顶部 *!
+        left: 30px; !* 距离左部 *!*/
+
+      /* 绝对定位 脱离文档流  并不会影响其它样式 top left bottom right   */
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: -1;
+   /*   bottom: 40px;
+      right: 30px;*/
+
+      /*  固定定位  也会脱离文档流 top left bottom right  */
+    /*  position: fixed;
+      bottom: 40px;
+      right: 30px;*/
+    }
+    .box1 {
+      background: skyblue;
+      /* 默认提高了z-index */
+      position: relative;
+      z-index: 9;
+    }
+  </style>
+
+</head>
+<body>
+<!-- 注释 -->
+<div class="contain">
+  <div class="w100 box"></div>
+  <div class="w100 box1"></div>
+</div>
+
+
+  <div>1 <!-- 定位父级 -->
+    <div>2<!-- 定位父级 -->
+      <!-- 绝对定位 -->
+      <div>3</div>
+    </div>
+  </div>
+</body>
+</html>

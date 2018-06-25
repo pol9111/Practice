@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="name" content="Trleo">
+  <title>Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .changeBtn {
+      /*让a标签变成行内块*/
+      display: inline-block;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      /*去掉下划线*/
+      text-decoration: none;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.55);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:void(0)" class="changeBtn">点击1</a>
+<a href="javascript:void(0)" class="changeBtn">点击2</a>
+<a href="javascript:void(0)" class="changeBtn">点击3</a>
+<a href="javascript:void(0)" class="changeBtn">点击4</a>
+<div class="imgBox">
+  <img src="https://res.shiguangkey.com//file/201804/18/20180418194336983231925.png" alt="">
+</div>
+<script>
+  // var changeBtnDom = document.querySelector('.changeBtn');
+  var changeBtn = document.getElementsByClassName('changeBtn');
+  var imgDom = document.querySelector('.imgBox img');
+  var imglist = ['https://res.shiguangkey.com//file/201804/18/20180418194336983231925.png', 'https://res.shiguangkey.com//file/201804/13/20180413154427225047910.png', 'https://res.shiguangkey.com//file/201804/11/20180411103001506230792.png', 'https://res.shiguangkey.com//file/201804/11/20180411140618918507099.png'];
+
+  for (let i=0;i<changeBtn.length;i++) {
+    changeBtn[i].onclick = function () {
+      imgDom.src = imglist[i];
+    }
+  }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
