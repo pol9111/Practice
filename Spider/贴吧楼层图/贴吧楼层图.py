@@ -16,9 +16,12 @@ def loadPage(url):
         作用：根据url发送请求，获取服务器响应文件
         url: 需要爬取的url地址
     """
-    #print url
-    # headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"}
-
+    print url
+    headers = {
+    # "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    # 'Accept': 'text / html, application / xhtml + xml, application / xml;q = 0.9, image / webp, image / apng, * / *;q = 0.8',
+    # 'Accept - Language': 'zh - CN, zh;q = 0.9, en - US;q = 0.8, en;q = 0.7, zh - TW;q = 0.6',
+    # }
 
     request = requests.get(url)
     # 解析HTML文档为HTML DOM模型
@@ -37,7 +40,10 @@ def loadPage(url):
 
 # 取出每个帖子里的每个图片连接
 def loadImage(link):
-    # headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
+    # headers = {
+    #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    #     'Accept': 'text / html, application / xhtml + xml, application / xml;q = 0.9, image / webp, image / apng, * / *;q = 0.8',
+    # }
     request = requests.get(link)
     # 解析
     content = etree.HTML(request.content)
@@ -56,8 +62,11 @@ def writeImage(link):
         作用：将html内容写入到本地
         link：图片连接
     """
-    # print ("正在保存 " + filename)
-    # headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"}
+    print ("正在保存 " + filename)
+    # headers = {
+    #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+    #     'Accept': 'text / html, application / xhtml + xml, application / xml;q = 0.9, image / webp, image / apng, * / *;q = 0.8',
+    # }
     # 文件写入
     request = requests.get(link)
     # 图片原始数据
