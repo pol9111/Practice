@@ -1,0 +1,223 @@
+2018-07-01 22:02:18 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: tencentJobC)
+2018-07-01 22:02:18 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.5.2 (default, Nov 23 2017, 16:37:01) - [GCC 5.4.0 20160609], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Linux-4.13.0-45-generic-x86_64-with-Ubuntu-16.04-xenial
+2018-07-01 22:02:18 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'tencentJobC.spiders', 'BOT_NAME': 'tencentJobC', 'SPIDER_MODULES': ['tencentJobC.spiders'], 'LOG_FILE': 'tenJoblog.log'}
+2018-07-01 22:02:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-07-01 22:02:18 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-07-01 22:02:18 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-07-01 22:02:18 [scrapy.middleware] INFO: Enabled item pipelines:
+['tencentJobC.pipelines.TencentjobcPipeline']
+2018-07-01 22:02:18 [scrapy.core.engine] INFO: Spider opened
+2018-07-01 22:02:18 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-07-01 22:02:18 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-07-01 22:02:19 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://hr.tencent.com/position.php?&start=0> from <GET http://hr.tencent.com/position.php?&start=0#a>
+2018-07-01 22:02:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=0> (referer: None)
+2018-07-01 22:02:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=10#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:20 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=10#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=70#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=3760#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=70#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:21 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=3760#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=60#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=40#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=50#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=20#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://hr.tencent.com/position.php?&start=30#a> (referer: https://hr.tencent.com/position.php?&start=0)
+2018-07-01 22:02:21 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=60#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=40#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=50#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=20#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://hr.tencent.com/position.php?&start=30#a> (referer: https://hr.tencent.com/position.php?&start=0)
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/spiders/crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "/home/bridi/python/project/tencentJobC/tencentJobC/spiders/main.py", line 29, in parse_item
+    item['workLocation'] = each.xpath("./td[4]/text()").extract()[0]
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/scrapy/item.py", line 66, in __setitem__
+    (self.__class__.__name__, key))
+KeyError: 'TencentjobcItem does not support field: workLocation'
+2018-07-01 22:02:22 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-07-01 22:02:22 [scrapy.core.engine] ERROR: Scraper close failure
+Traceback (most recent call last):
+  File "/home/bridi/.virtualenvs/icrawl/lib/python3.5/site-packages/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+TypeError: close_spider() takes 1 positional argument but 2 were given
+2018-07-01 22:02:22 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3158,
+ 'downloader/request_count': 10,
+ 'downloader/request_method_count/GET': 10,
+ 'downloader/response_bytes': 35571,
+ 'downloader/response_count': 10,
+ 'downloader/response_status_count/200': 9,
+ 'downloader/response_status_count/301': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 7, 1, 14, 2, 22, 65126),
+ 'log_count/DEBUG': 11,
+ 'log_count/ERROR': 9,
+ 'log_count/INFO': 7,
+ 'memusage/max': 52023296,
+ 'memusage/startup': 52023296,
+ 'request_depth_max': 1,
+ 'response_received_count': 9,
+ 'scheduler/dequeued': 10,
+ 'scheduler/dequeued/memory': 10,
+ 'scheduler/enqueued': 10,
+ 'scheduler/enqueued/memory': 10,
+ 'spider_exceptions/KeyError': 8,
+ 'start_time': datetime.datetime(2018, 7, 1, 14, 2, 18, 505809)}
+2018-07-01 22:02:22 [scrapy.core.engine] INFO: Spider closed (finished)

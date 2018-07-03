@@ -6,14 +6,15 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import json
 
-class TencentjobPipeline(object):
+
+class DongguanfaqPipeline(object):
     def __init__(self):
-        self.file = open('tencentJob.json', 'wb')
+        self.filename = open("sun.json", "wb")
 
     def process_item(self, item, spider):
-        content = json.dumps(dict(item), ensure_ascii=False) + '\n'
-        self.file.write(content.encode('utf-8'))
+        text = json.dumps(dict(item), ensure_ascii=False) + '\n'
+        self.filename.write(text.encode('utf-8'))
         return item
 
     def close_spider(self, spider):
-        self.file.close()
+        self.filename.close()
